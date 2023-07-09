@@ -9,7 +9,8 @@ run code on local: npm run dev
 
 
 total page: 3 (mypage, record, column)
-
+# Record page
 /record
+# column page
 /column
 /
