@@ -13,4 +13,6 @@ total page: 3 (mypage, record, column)
 /record
 # column page
 /column
+
+# home mypage
 /
