@@ -1,0 +1,233 @@
+.my-record-page-container {
+    margin-bottom: 150px;
+    .load-more {
+        text-align: center;
+        button {
+            margin-top: 25px;
+            background: linear-gradient(32.95deg, #FFCC21 8.75%, #FF963C 86.64%);
+            color: #fff;
+            width: 296px;
+            height: 56px;
+        }
+    }
+    .my-diary {
+        margin: 50px 0 10px;
+        .list-item {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .item {
+            border: 2px solid rgba(112, 112, 112, 1);
+            margin-bottom: 15px;
+            width: 231px;
+            box-sizing: border-box;
+            padding: 10px;
+            p {
+                margin: 2px 0 4px;
+            }
+        }
+    }
+    .top-data {
+        display: flex;
+        margin-top: 60px;
+        gap: 45px;
+        .item {
+            border: 24px solid rgba(255, 204, 33, 1);
+            position: relative;
+            &::before {
+                content: '';
+                background: black;
+                opacity: 0.5;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: 2;
+            }
+            img {
+                display: block;
+            }
+            .content{
+                position: absolute;
+                z-index: 10;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                p {
+                    font-size: 13px;
+                    background: rgba(255, 150, 60, 1);
+                    color: #fff;
+                    text-align: center;
+                }
+                h4 {
+                    color: rgba(255, 204, 33, 1);
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+    .my-exercise {
+        background: rgba(65, 65, 65, 1);
+        color: #fff;
+        margin-top: 60px;
+        padding: 10px 25px;
+        .top {
+            align-items: center;
+            span {
+                margin-left: 12px;
+                font-size: 25px;
+            }
+        }
+        .content-body {
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0;
+                gap: 4%;
+                max-height: 264px;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                padding-right: 25px;
+                &::-webkit-scrollbar {
+                    width: 5px;
+                    height: 8px;
+                    /* width of the entire scrollbar */
+                  }
+                
+                  &::-webkit-scrollbar-track {
+                    background: rgba(119, 119, 119, 1);
+                    border-radius: 20px;
+                    /* color of the tracking area */
+                  }
+                
+                  &::-webkit-scrollbar-thumb {
+                    background-color: rgba(255, 204, 33, 1);
+                    /* color of the scroll thumb */
+                    border-radius: 20px;
+                    /* roundness of the scroll thumb */
+                  }
+            }
+            .item {
+                width: 48%;
+                align-items: self-start;
+                justify-content: space-between;
+                .content-left {
+                    width: 45%;
+                    position: relative;
+                    &::before {
+                        position: absolute;
+                        z-index: 9;
+                        top: -18px;
+                        left: -15px;
+                        content: '.';
+                        color: #fff;
+                        font-size: 30px;
+                    }
+                }
+                .content-right {
+                    width: 45%;
+                    text-align: right;
+                }
+
+                p {
+                    margin: 0;
+                    &.unit {
+                        color: rgba(255, 204, 33, 1);
+                    }
+                }
+                .time {
+                    color: rgba(255, 204, 33, 1);
+                }
+                border-bottom: 1px solid rgba(119, 119, 119, 1);
+            }
+        }
+    }
+
+    .my-record {
+        background: rgba(46, 46, 46, 1);
+        color: #fff;
+        margin-top: 60px;
+        padding: 10px 25px;
+        .top {
+            align-items: center;
+            span {
+                margin-left: 12px;
+                font-size: 25px;
+            }
+        }
+        .chart-series {
+            ul {
+                display: flex;
+                .item {
+
+                    padding: 6px 5px;
+                    border-radius: 50px;
+                    width: 75px;
+                    justify-content: center;
+                    margin: 0 8px;
+                    cursor: pointer;
+                    color: #fff;
+                    background: rgba(255, 204, 33, 1);
+                    &.active {
+                        background: rgba(255, 255, 255, 1);
+                        color: rgba(255, 204, 33, 1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .my-record-page-container {
+        .top-data {
+            flex-direction: column;
+        }
+        .my-exercise {
+            .content-body ul {
+                flex-direction: column;
+                flex-wrap: nowrap;
+                .item {
+                    width: 100%;
+                }
+            }
+        }
+
+        .my-diary {
+            .list-item {
+                flex-direction: column;
+                flex-wrap: nowrap;
+                .item {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px)  {
+    .my-record-page-container {
+        .top-data {
+            flex-direction: column;
+        }
+        .my-exercise {
+            .content-body ul {
+                flex-direction: column;
+                flex-wrap: nowrap;
+                .item {
+                    width: 100%;
+                }
+            }
+        }
+
+        .my-diary {
+            .list-item {
+                .item {
+                    width: 49%;
+                }
+            }
+        }
+    }
+}

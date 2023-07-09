@@ -1,0 +1,16 @@
+.scroll-to-top-button {
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%,-50%);
+}
+
+.scroll-to-top-button {
+    display: none;
+    /* ... additional styling */
+  }
+  
+.scroll-to-top-button.visible {
+    display: block;
+}
