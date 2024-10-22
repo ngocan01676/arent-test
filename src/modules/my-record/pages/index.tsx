@@ -38,9 +38,14 @@ export const MyRecordPage:React.FC = observer(() => {
                 <div className="chart-series">
                     <ul>
                         {viewmodel.chartSerries.map((item: {name:string, active: boolean}, index: number) => (
-                            <li className={`item d-flex ${item.active ? 'active' : ''}`}  key={index} onClick={() => {activateDeactivateSeries(containerRef,item.name)}}>
-                                <span>{item.name}</span>
-                            </li>
+                            <Observer key={index}>
+                            {() =>
+                                <li className={`item d-flex ${item.active ? 'active' : ''}`}  key={index} onClick={() => {activateDeactivateSeries(containerRef,item.name)}}>
+                                    <span>{item.name}</span>
+                                </li>
+                            }
+                            </Observer>
+      
                         ))}
                     </ul>
                 </div>
